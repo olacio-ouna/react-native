@@ -279,7 +279,8 @@ RCT_ARRAY_CONVERTER(RCTFontVariantDescriptor)
   // Get font attributes
   fontSize = [RCTConvert CGFloat:size] ?: fontSize;
   if (scaleMultiplier > 0.0 && scaleMultiplier != 1.0) {
-    fontSize = round(fontSize * scaleMultiplier);
+    //fontSize = round(fontSize * scaleMultiplier);
+    fontSize = round(fontSize);  // keep fontsize and not fellow the system
   }
   familyName = [RCTConvert NSString:family] ?: familyName;
   isItalic = style ? [RCTConvert RCTFontStyle:style] : isItalic;
